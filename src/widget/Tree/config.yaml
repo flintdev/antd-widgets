@@ -1,0 +1,22 @@
+params:
+  - group: Parameters
+    items:
+      - key: data
+        name: Data
+        type: array
+        element:
+          type: object
+        ui: input
+events:
+  - key: handleOnSelect
+    name: handleOnSelect
+    args:
+      - name: node
+        type: object
+        required: true
+  - key: handleOnCheck
+    name: handleOnCheck
+    args:
+      - name: node
+        type: object
+        required: true
