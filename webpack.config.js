@@ -11,7 +11,7 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     output: {
-        path: path.resolve('./assets/'),
+        path: path.resolve('./docs/'),
         filename: "[name].js",
         libraryTarget: 'umd',
         library: 'antd-widgets'
