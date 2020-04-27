@@ -7,7 +7,7 @@
     "test": "test",
     "start": "webpack-dev-server --progress --color",
     "build-bundle": "webpack --progress --config webpack.config.js",
-    "build-dist": "rimraf dist && tsc --outDir dist/ && copyfiles -u 1 src/**/*.yaml dist/",
+    "build-dist": "rimraf dist && tsc --outDir dist/ && copyfiles -u 1 src/**/*.yaml dist/ && copyfiles -u 1 src/**/*.less dist/",
     "update-widget-builder": "npm install @flintdev/widget-builder@latest",
     "update-all": "npm run update-widget-builder"
   },
@@ -28,12 +28,12 @@
     "react": ">=16.12.0",
     "react-dom": ">=16.12.0",
     "lodash": "^4.17.15 || ^4.0.0",
-    "js-yaml": "^3.13.1"
+    "js-yaml": "^3.13.1",
+    "antd": "^4.1.4",
+    "@ant-design/icons": "^4.0.0"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.0.0",
     "@flintdev/widget-builder": "0.0.28",
-    "antd": "^4.1.4",
     "gg-editor": "^2.0.4"
   },
   "devDependencies": {

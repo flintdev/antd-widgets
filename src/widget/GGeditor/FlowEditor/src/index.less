@@ -1,0 +1,44 @@
+@import '~antd/es/style/themes/default.less';
+.editor {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 200px);
+}
+
+.graph-container {
+  background-color: "white";
+}
+
+.editorHd {
+}
+
+.editorBd {
+  flex: 1;
+}
+
+.editorSidebar,
+.editorContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.editorSidebar {
+  :global {
+    .g6-editor-minimap-container {
+      background: none !important ;
+    }
+  }
+}
+
+.g6-editor-minimap-container {
+  background-color:  "white";
+}
+
+.flow ,
+.mind,
+.koni {
+  flex: 1;
+  height: 100%;
+}
