@@ -22,7 +22,7 @@ const ToolbarButton: React.FC<ToolbarButtonProps> = (props) => {
         placement="bottom"
         overlayClassName={`tooltip`}
       >
-        <IconFont type={`icon-${icon || command}`} style={{fontSize: 25, paddingLeft: 20}} />
+        <IconFont type={`icon-${icon || command}`}/>
       </Tooltip>
     </Command>
   );

@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const tsImportPluginFactory = require('ts-import-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     context: __dirname,
@@ -58,18 +59,37 @@ module.exports = {
                 use: 'raw-loader'
             },
             {
-                test: /\.less$/,
+                test: /\.(css|less)$/,
+                include: /node_modules/,
                 use: [{
-                    loader: "style-loader"
+                  loader: 'style-loader' // creates style nodes from JS strings
                 }, {
-                    loader: "css-loader"
+                  loader: 'css-loader', // translates CSS into CommonJS
                 }, {
-                    loader: "less-loader",
-                    options: {
-                        lessOptions: {javascriptEnabled: true}
-                    }
-                }]
-            },
+                  loader: 'less-loader', // compiles Less to CSS
+                  options: { lessOptions: {javascriptEnabled: true, sourceMap: true }},
+                }],
+              },
+              {
+                test: /\.(css|less)$/,
+                exclude: /node_modules/,
+                use: [{
+                  loader: 'style-loader' // creates style nodes from JS strings
+                }, {
+                  loader: 'css-loader', // translates CSS into CommonJS
+                  options: {
+                    modules: {
+                        localIdentName: "[name]__[local]___[hash:base64:5]",
+                    },	
+                    importLoaders: 2,											
+                    sourceMap: true
+                  }
+                },
+                {
+                    loader: 'less-loader', // compiles Less to CSS
+                    options: { lessOptions: {javascriptEnabled: true, sourceMap: true }},
+                  }],
+              }
         ],
     },
     plugins: [

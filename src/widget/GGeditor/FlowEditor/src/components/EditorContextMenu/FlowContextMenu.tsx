@@ -2,10 +2,10 @@ import { CanvasMenu, ContextMenu, EdgeMenu, GroupMenu, MultiMenu, NodeMenu } fro
 
 import React from 'react';
 import MenuItem from './MenuItem';
-import './index.less';
+import styles from './index.less';
 
 const FlowContextMenu = () => (
-  <ContextMenu className={`contextMenu`}>
+  <ContextMenu className={styles.contextMenu}>
     <NodeMenu>
       <MenuItem command="copy" />
       <MenuItem command="delete" />

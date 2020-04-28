@@ -1,10 +1,10 @@
 import React from 'react';
 import { Toolbar } from 'gg-editor';
 import ToolbarButton from './ToolbarButton';
-import './index.less';
+import styles from './index.less';
 
 const FlowToolbar = ({viewOnly} : any) => (
-  <Toolbar className={`toolbar`}>
+  <Toolbar className={styles.toolbar}>
 
       <ToolbarButton command="zoomIn" icon="zoom-in" text="Zoom In" />
       <ToolbarButton command="zoomOut" icon="zoom-out" text="Zoom Out" />

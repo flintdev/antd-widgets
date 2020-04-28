@@ -9,7 +9,7 @@ import { FlowDetailPanel } from './components/EditorDetailPanel';
 import { KoniItemPanel } from './components/EditorItemPanel';
 import { FlowToolbar } from './components/EditorToolbar';
 import MyKoniCustomNode from './MyKoniCustomNode';
-import './index.less';
+import styles from './index.less';
 
 GGEditor.setTrackable(false);
 
@@ -22,9 +22,9 @@ export default class App extends React.Component<any, any> {
     const { data, viewOnly, showMimiMap, showContainer, customNode, handleNodeClick } = this.props;
 
     return (
-      <GGEditor className={`editor`}>
+      <GGEditor className={styles.editor}>
         <MyKoniCustomNode />
-        <Row className={`editorHd`} style={{ marginBottom: 20 }}>
+        <Row className={styles.editorHd} style={{ marginBottom: 20 }}>
           <Col span={20}>
             <FlowToolbar viewOnly={viewOnly} />
           </Col>
@@ -32,7 +32,7 @@ export default class App extends React.Component<any, any> {
             <Tooltip
               title={"title"}
               placement="bottom"
-              overlayClassName={`tooltip`}
+              overlayClassName={styles.tooltip}
             >
               <MySave />
             </Tooltip>
@@ -40,21 +40,21 @@ export default class App extends React.Component<any, any> {
           }
         </Row>
 
-        <Row className={`editorBd`}>
-          {!viewOnly && <Col span={2} className={`editorSidebar`}>
+        <Row className={styles.editorBd}>
+          {!viewOnly && <Col span={2} className={styles.editorSidebar}>
             <KoniItemPanel customItems={customNode} />
           </Col>
           }
-          <Col span={18 + ((!!showMimiMap || !!showContainer) ? 0 : 4) + (!viewOnly ? 0 : 2)} className={`editorContent`}>
+          <Col span={18 + ((!!showMimiMap || !!showContainer) ? 0 : 4) + (!viewOnly ? 0 : 2)} className={styles.editorContent}>
             <Flow
               data={data}
-              className={`flow`}
+              className={styles.flow}
               // @ts-ignore
               onNodeClick={handleNodeClick}
             />
           </Col>
           {(!!showMimiMap || !!showContainer) &&
-            <Col span={4} className={`editorSidebar`}>
+            <Col span={4} className={styles.editorSidebar}>
               {!!showMimiMap && <EditorMinimap />}
               {!viewOnly && <FlowDetailPanel />}
             </Col>

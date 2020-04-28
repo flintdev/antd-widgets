@@ -3,7 +3,9 @@
 import * as React from 'react';
 import { treeData } from "./data/treeNodes";
 import { FlowEditor, Tree } from "../src";
+import MindEditor from "../src/widget/GGeditor/MindEditor/src";
 import { flowData, customNode } from "./data/flowData";
+import { mindData } from "./data/mindData";
 import { Switch } from 'antd';
 import { Tabs } from 'antd';
 
@@ -45,7 +47,7 @@ class ExampleContainer extends React.Component<Props, State> {
         const { viewOnly, showMimiMap } = this.state;
         return (
             <Tabs defaultActiveKey="1" tabPosition={'left'}>
-                {["tree", "flow"].map((tab, i) => (
+                {["tree", "flow", "mind"].map((tab, i) => (
                     <TabPane tab={tab} key={i.toString()}>
                         {tab === "tree" &&
                             <Tree params={{
@@ -72,6 +74,10 @@ class ExampleContainer extends React.Component<Props, State> {
                                     onNodeSelect: this.onNodeSelect
                                 }}
                             />
+                        </>
+                        }
+                        {tab === "mind" && <>
+                            <MindEditor data={mindData}/>
                         </>
                         }
                     </TabPane>

@@ -2,7 +2,7 @@ import React from "react";
 import { withPropsAPI } from "gg-editor";
 import { Button } from "antd";
 import {
-    SaveOutlined
+    SaveFilled
   } from '@ant-design/icons';
   
 class Save extends React.Component<any> {
@@ -15,7 +15,7 @@ class Save extends React.Component<any> {
   render() {
     return (
         <Button
-                icon={<SaveOutlined style={{ fontSize: 25 }} />}
+                icon={<SaveFilled/>}
                 type="link"
                 onClick={this.handleClick}
         />
