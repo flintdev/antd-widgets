@@ -2,9 +2,8 @@
 
 import * as React from 'react';
 import { treeData } from "./data/treeNodes";
-import { FlowEditor, Tree } from "../src";
-import MindEditor from "../src/widget/GGeditor/MindEditor/src";
-import { flowData, customNode } from "./data/flowData";
+import { KubeEditor, MindEditor, Tree } from "../src";
+import { flowData, customNodes } from "./data/flowData";
 import { mindData } from "./data/mindData";
 import { Switch } from 'antd';
 import { Tabs } from 'antd';
@@ -16,38 +15,34 @@ export interface Props {
 }
 
 export interface State {
-    viewOnly: boolean,
-    showMimiMap: boolean
+    displayMode: string,
+    showMimiMap: string
 }
 
 class ExampleContainer extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props)
         this.state = {
-            viewOnly: false,
-            showMimiMap: true
+            displayMode: 'edit',
+            showMimiMap: "show"
         }
         this.handleSwitchViewOnly = this.handleSwitchViewOnly.bind(this);
         this.handleSwitchShowMimiMap = this.handleSwitchShowMimiMap.bind(this);
     }
 
     handleSwitchViewOnly() {
-        this.setState({ viewOnly: !this.state.viewOnly })
+        // this.setState({ viewOnly: !this.state.viewOnly })
     }
 
     handleSwitchShowMimiMap() {
-        this.setState({ showMimiMap: !this.state.showMimiMap })
-    }
-
-    onNodeSelect(data: any) {
-        console.log('>>>> onNodeSelect', data)
+        // this.setState({ showMimiMap: !this.state.showMimiMap })
     }
 
     render() {
-        const { viewOnly, showMimiMap } = this.state;
+        const { displayMode, showMimiMap } = this.state;
         return (
             <Tabs defaultActiveKey="1" tabPosition={'left'}>
-                {["tree", "flow", "mind"].map((tab, i) => (
+                {["tree", "kube", "mind"].map((tab, i) => (
                     <TabPane tab={tab} key={i.toString()}>
                         {tab === "tree" &&
                             <Tree params={{
@@ -57,27 +52,32 @@ class ExampleContainer extends React.Component<Props, State> {
                                 checkable: true
                             }} />
                         }
-                        {tab === "flow" && <>
-                            <div style={{ padding: 20, float: "right" }}>
-                                <Switch checkedChildren="viewOnly: true" unCheckedChildren="viewOnly: false" checked={viewOnly} onChange={this.handleSwitchViewOnly} />
-                                <Switch checkedChildren="showMimiMap: true" unCheckedChildren="showMimiMap: false" checked={showMimiMap} onClick={this.handleSwitchShowMimiMap} />
-                            </div>
-                            <FlowEditor
+                        {tab === "kube" && <>
+                            <KubeEditor
                                 params={{
                                     data: flowData,
-                                    viewOnly: viewOnly,
-                                    customNode: customNode,
-                                    showMimiMap: showMimiMap,
-
+                                    customNodes: customNodes,
+                                    hideMimiMap: displayMode,
+                                    hidePanel: showMimiMap,
                                 }}
                                 events={{
-                                    onNodeSelect: this.onNodeSelect
+                                    onNodeSelect: (data) => console.log('>>> KubeEditor.onNodeSelect', data),
+                                    onNodeDoubleClick: (data) => console.log('>>> KubeEditor.onNodeDoubleClick', data),
+                                    onSave: (data) => console.log('>>> KubeEditor.onSave', data),
                                 }}
                             />
                         </>
                         }
                         {tab === "mind" && <>
-                            <MindEditor data={mindData}/>
+                            <MindEditor
+                                params={{
+                                    data: mindData
+                                }}
+                                events={{
+                                    onNodeSelect: (data) => console.log('>>> MindEditor.onNodeSelect', data),
+                                    onSave: (data) => console.log('>>> MindEditor.onSave', data)
+                                }}
+                            />
                         </>
                         }
                     </TabPane>

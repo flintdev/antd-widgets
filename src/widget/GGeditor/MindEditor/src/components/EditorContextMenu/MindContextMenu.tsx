@@ -6,6 +6,7 @@ import styles from './index.less';
 
 const MindContextMenu = () => (
   <ContextMenu className={styles.contextMenu}>
+    
     <NodeMenu>
       <MenuItem command="append" text="Topic" />
       <MenuItem command="appendChild" icon="append-child" text="Subtopic" />

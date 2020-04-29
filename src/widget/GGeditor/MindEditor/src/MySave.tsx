@@ -7,9 +7,8 @@ import {
   
 class Save extends React.Component<any> {
   handleClick = () => {
-    const { propsAPI } = this.props;
-
-    console.log(propsAPI.save());
+    const { propsAPI, handleSave } = this.props;
+    handleSave(propsAPI.save())
   };
 
   render() {

@@ -3,18 +3,21 @@
 import {Registry} from "@flintdev/widget-builder";
 
 import Tree , {Props as TreeProps, configJson as TreeConfig} from "./widget/Tree";
-import FlowEditor , {Props as FlowEditorProps, configJson as FlowEditorConfig} from "./widget/GGeditor/FlowEditor";
+import KubeEditor , {Props as KubeEditorProps, configJson as KubeEditorConfig} from "./widget/GGeditor/KubeEditor";
+import MindEditor , {Props as MindEditorProps, configJson as MindEditorConfig} from "./widget/GGeditor/MindEditor";
 
 
 let registry = new Registry();
 
 registry.add('Tree', Tree, TreeConfig, {category: "widget"});
-registry.add('FlowEditor', FlowEditor, FlowEditorConfig, {category: "widget"});
+registry.add('KubeEditor', KubeEditor, KubeEditorConfig, {category: "widget"});
+registry.add('MindEditor', MindEditor, MindEditorConfig, {category: "widget"});
 
 
 export {
     Tree,
-    FlowEditor
+    KubeEditor,
+    MindEditor
 };
 
 export const library = registry.pack();

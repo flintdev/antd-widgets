@@ -1,0 +1,26 @@
+params:
+  - group: Parameters
+    items:
+      - key: data
+        name: Data
+        type: object
+        ui: input
+events:
+  - key: onNodeSelect
+    name: onNodeSelect
+    args:
+      - name: node
+        type: object
+        required: false
+  - key: onNodeDoubleClick
+    name: onNodeDoubleClick
+    args:
+      - name: node
+        type: object
+        required: false
+  - key: onSave
+    name: onSave
+    args:
+      - name: node
+        type: object
+        required: false

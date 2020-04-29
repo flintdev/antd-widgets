@@ -81,11 +81,7 @@ export const flowData = {
     ]
   };
 
-export const customNode = [
-    {
-      name: "ING",
-      icon: `<path fill='white' d='M11.77 12.54H9.49L4.57 6.4H3.15V4.37h2.31l4.93 6.16h1.38v-1.6l3.12 2.6-3.12 2.6zM9.29 7.8l1.1-1.38h1.38v1.6l3.12-2.6-3.12-2.6V4.4H9.49L8.04 6.22zm-3.6 1.36l-1.12 1.4H3.15v2.02h2.31l1.48-1.85z' pointer-events='none'/>`,
-    },
+export const customNodes = [
     {
       name: "CRD",
       color: "rgb(92,191,142)",
@@ -106,6 +102,10 @@ export const customNode = [
     {
       name: "DEPLOY",
       icon: "<g fill='white' fill-rule='evenodd'><path d='M8.58 12.56a4.45 4.45 0 114.23-4.73l-1.76.11A2.69 2.69 0 108.5 10.8z'/><path d='M9.49 7.83l1.4 3.43 3.22-3.43z'/></g>"
-    }
+    },
+    {
+      name: "ING",
+      icon: `<path fill='white' d='M11.77 12.54H9.49L4.57 6.4H3.15V4.37h2.31l4.93 6.16h1.38v-1.6l3.12 2.6-3.12 2.6zM9.29 7.8l1.1-1.38h1.38v1.6l3.12-2.6-3.12-2.6V4.4H9.49L8.04 6.22zm-3.6 1.36l-1.12 1.4H3.15v2.02h2.31l1.48-1.85z' pointer-events='none'/>`,
+    },
 
   ]
