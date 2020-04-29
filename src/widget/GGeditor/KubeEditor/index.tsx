@@ -4,4 +4,4 @@ import * as yaml from 'js-yaml';
 export const configJson = yaml.safeLoad(ConfigYaml);
 
 export { default } from './KubeEditor';
-export { AppWidgetProps } from './KubeEditor';
+export { Props } from './KubeEditor';

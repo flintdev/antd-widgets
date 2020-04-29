@@ -1,9 +1,6 @@
 import React from "react";
 import { withPropsAPI } from "gg-editor";
-import { Button } from "antd";
-import {
-    SaveFilled
-  } from '@ant-design/icons';
+import ButtonMap from "./ButtonMap";
   
 class Save extends React.Component<any> {
   handleClick = () => {
@@ -13,11 +10,7 @@ class Save extends React.Component<any> {
 
   render() {
     return (
-        <Button
-                icon={<SaveFilled/>}
-                type="link"
-                onClick={this.handleClick}
-        />
+        <ButtonMap icon={"save"} handleClick={this.handleClick}/>
     );
   }
 }
