@@ -2,7 +2,7 @@ export const flowData = {
     "nodes": [
       {
         "type": "node",
-        "shape": "k8s-object",
+        "shape": "hex-object",
         "label": "NS",
         "icon": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18.04 17.5'><defs/><path fill='rgb(51,113,227)' d='M8.96.46a1.14 1.13 0 00-.44.11L2.58 3.41a1.14 1.13 0 00-.61.77L.5 10.55a1.14 1.13 0 00.16.86 1.14 1.13 0 00.06.1l4.11 5.1a1.14 1.13 0 00.9.43h6.58a1.14 1.13 0 00.9-.43l4.1-5.1a1.14 1.13 0 00.22-.96l-1.47-6.38a1.14 1.13 0 00-.61-.76L9.5.57a1.14 1.13 0 00-.55-.1z'/><text x='10' y='16.8' style='line-height:6.61458349px' fill='white' stroke-width='.3' font-family='monospace' font-size='10.6' font-weight='400' letter-spacing='0' transform='translate(-1 -1.2)' word-spacing='0'><tspan x='10' y='16.8' font-family='monospace' font-size='2.8' text-anchor='middle'>NS</tspan></text><path fill='none' stroke='white' stroke-dasharray='.8 .4' stroke-dashoffset='3.44' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='.4' d='M5.18 5.2h7.67v6.69H5.18z'/></svg>",
         "x": 100,
@@ -11,7 +11,7 @@ export const flowData = {
       },
       {
         "type": "node",
-        "shape": "k8s-object",
+        "shape": "hex-object",
         "label": "DEPLOY",
         "icon": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18.04 17.5'><defs/><path fill='rgb(51,113,227)' d='M8.96.46a1.14 1.13 0 00-.44.11L2.58 3.41a1.14 1.13 0 00-.61.77L.5 10.55a1.14 1.13 0 00.16.86 1.14 1.13 0 00.06.1l4.11 5.1a1.14 1.13 0 00.9.43h6.58a1.14 1.13 0 00.9-.43l4.1-5.1a1.14 1.13 0 00.22-.96l-1.47-6.38a1.14 1.13 0 00-.61-.76L9.5.57a1.14 1.13 0 00-.55-.1z'/><text x='10' y='16.8' style='line-height:6.61458349px' fill='white' stroke-width='.3' font-family='monospace' font-size='10.6' font-weight='400' letter-spacing='0' transform='translate(-1 -1.2)' word-spacing='0'><tspan x='10' y='16.8' font-family='monospace' font-size='2.8' text-anchor='middle'>DEPLOY</tspan></text><g fill='white' fill-rule='evenodd'><path d='M8.58 12.56a4.45 4.45 0 114.23-4.73l-1.76.11A2.69 2.69 0 108.5 10.8z'/><path d='M9.49 7.83l1.4 3.43 3.22-3.43z'/></g></svg>",
         "x": 300,
@@ -20,7 +20,7 @@ export const flowData = {
       },
       {
         "type": "node",
-        "shape": "k8s-object",
+        "shape": "hex-object",
         "label": "POD",
         "icon": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18.04 17.5'><defs/><path fill='rgb(51,113,227)' d='M8.96.46a1.14 1.13 0 00-.44.11L2.58 3.41a1.14 1.13 0 00-.61.77L.5 10.55a1.14 1.13 0 00.16.86 1.14 1.13 0 00.06.1l4.11 5.1a1.14 1.13 0 00.9.43h6.58a1.14 1.13 0 00.9-.43l4.1-5.1a1.14 1.13 0 00.22-.96l-1.47-6.38a1.14 1.13 0 00-.61-.76L9.5.57a1.14 1.13 0 00-.55-.1z'/><text x='10' y='16.8' style='line-height:6.61458349px' fill='white' stroke-width='.3' font-family='monospace' font-size='10.6' font-weight='400' letter-spacing='0' transform='translate(-1 -1.2)' word-spacing='0'><tspan x='10' y='16.8' font-family='monospace' font-size='2.8' text-anchor='middle'>POD</tspan></text><g fill='white' fill-rule='evenodd'><path d='M5.4 5.9l3.6-1 3.6 1-3.6 1zM5.4 6.3V10L8.8 12V7.3zM12.6 6.3V10L9.3 12V7.3z'/></g></svg>",
         "x": 500,
@@ -30,7 +30,7 @@ export const flowData = {
       {
         "type": "node",
         "size": "70",
-        "shape": "k8s-object",
+        "shape": "hex-object",
         "label": "POD",
         "icon": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18.04 17.5'><defs/><path fill='rgb(51,113,227)' d='M8.96.46a1.14 1.13 0 00-.44.11L2.58 3.41a1.14 1.13 0 00-.61.77L.5 10.55a1.14 1.13 0 00.16.86 1.14 1.13 0 00.06.1l4.11 5.1a1.14 1.13 0 00.9.43h6.58a1.14 1.13 0 00.9-.43l4.1-5.1a1.14 1.13 0 00.22-.96l-1.47-6.38a1.14 1.13 0 00-.61-.76L9.5.57a1.14 1.13 0 00-.55-.1z'/><text x='10' y='16.8' style='line-height:6.61458349px' fill='white' stroke-width='.3' font-family='monospace' font-size='10.6' font-weight='400' letter-spacing='0' transform='translate(-1 -1.2)' word-spacing='0'><tspan x='10' y='16.8' font-family='monospace' font-size='2.8' text-anchor='middle'>POD</tspan></text><g fill='white' fill-rule='evenodd'><path d='M5.4 5.9l3.6-1 3.6 1-3.6 1zM5.4 6.3V10L8.8 12V7.3zM12.6 6.3V10L9.3 12V7.3z'/></g></svg>",
         "x": 500,
@@ -40,7 +40,7 @@ export const flowData = {
       },
       {
         "type": "node",
-        "shape": "k8s-object",
+        "shape": "hex-object",
         "label": "POD",
         "icon": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18.04 17.5'><defs/><path fill='rgb(51,113,227)' d='M8.96.46a1.14 1.13 0 00-.44.11L2.58 3.41a1.14 1.13 0 00-.61.77L.5 10.55a1.14 1.13 0 00.16.86 1.14 1.13 0 00.06.1l4.11 5.1a1.14 1.13 0 00.9.43h6.58a1.14 1.13 0 00.9-.43l4.1-5.1a1.14 1.13 0 00.22-.96l-1.47-6.38a1.14 1.13 0 00-.61-.76L9.5.57a1.14 1.13 0 00-.55-.1z'/><text x='10' y='16.8' style='line-height:6.61458349px' fill='white' stroke-width='.3' font-family='monospace' font-size='10.6' font-weight='400' letter-spacing='0' transform='translate(-1 -1.2)' word-spacing='0'><tspan x='10' y='16.8' font-family='monospace' font-size='2.8' text-anchor='middle'>POD</tspan></text><g fill='white' fill-rule='evenodd'><path d='M5.4 5.9l3.6-1 3.6 1-3.6 1zM5.4 6.3V10L8.8 12V7.3zM12.6 6.3V10L9.3 12V7.3z'/></g></svg>",
         "x": 500,

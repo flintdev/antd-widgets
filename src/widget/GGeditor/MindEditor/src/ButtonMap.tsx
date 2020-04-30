@@ -16,7 +16,11 @@ import {
     SelectOutlined,
     GroupOutlined,
     UngroupOutlined,
-    SaveOutlined
+    SaveOutlined,
+    SisternodeOutlined,
+    SubnodeOutlined,
+    NodeCollapseOutlined,
+    NodeExpandOutlined
 } from "@ant-design/icons"
 
 const map = {
@@ -34,7 +38,11 @@ const map = {
         "multi-select": <SelectOutlined/>,
         "group": <GroupOutlined/>,
         "ungroup": <UngroupOutlined/>,
-        "save": <SaveOutlined />
+        "save": <SaveOutlined />,
+        "append": <SisternodeOutlined />,
+        "append-child": <SubnodeOutlined />,
+        "collapse": <NodeCollapseOutlined/>,
+        "expand": <NodeExpandOutlined/>
 }
 
 export default class ButtonMap extends React.Component<any> {
