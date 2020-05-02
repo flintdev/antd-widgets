@@ -32,15 +32,11 @@ export default class Demo extends Widget<Props> {
     const { params } = this.props;
     const { data } = params;
     return (
-      <>
-        {!!data && (
-          <MindEditorDev
-            data={data}
-            handleNodeClick={this.handleNodeClick}
-            handleSave={this.handleSave}
-          />
-        )}
-      </>
+      <MindEditorDev
+        data={data || {}}
+        handleNodeClick={this.handleNodeClick}
+        handleSave={this.handleSave}
+      />
     )
   }
 };

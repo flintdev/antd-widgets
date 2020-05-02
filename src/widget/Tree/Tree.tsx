@@ -1,7 +1,7 @@
 import { Tree } from 'antd';
 import * as React from 'react';
 import { Widget, WidgetProps } from "@flintdev/widget-builder";
-import "./index.less";
+import 'antd/dist/antd.less';
 
 interface Params {
   data: any
@@ -19,16 +19,12 @@ export default class App extends Widget<Props> {
     const { params } = this.props;
     const { data, checkable, handleOnSelect, handleOnCheck } = params;
     return (
-      <>
-        {!!data && (
-          <Tree
-            checkable={checkable}
-            onSelect={handleOnSelect}
-            onCheck={handleOnCheck}
-            treeData={data}
-          />
-        )}
-      </>
+      <Tree
+        checkable={checkable}
+        onSelect={handleOnSelect}
+        onCheck={handleOnCheck}
+        treeData={data || []}
+      />
     )
   }
 };

@@ -8,9 +8,10 @@ import { KoniContextMenu } from './components/EditorContextMenu';
 import { KoniDetailPanel } from './components/EditorDetailPanel';
 import { KoniItemPanel } from './components/EditorItemPanel';
 import { KoniToolbar } from './components/EditorToolbar';
-import styles from './index.less';
+import styles from './index.modules.less';
 import MyKoniCustomNode from './MyKoniCustomNode';
 import MySave from './MySave';
+import 'antd/dist/antd.less';
 
 GGEditor.setTrackable(false);
 export default ({ data, customNodes, hidePanel, hideMimiMap, handleNodeClick, handleNodeDoubleClick, handleSave }: any) => (

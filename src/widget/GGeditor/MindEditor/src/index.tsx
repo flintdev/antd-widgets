@@ -5,8 +5,9 @@ import EditorMinimap from './components/EditorMinimap';
 import { MindContextMenu } from './components/EditorContextMenu';
 import { MindDetailPanel } from './components/EditorDetailPanel';
 import { MindToolbar } from './components/EditorToolbar';
-import styles from './index.less';
+import styles from './index.modules.less';
 import MySave from './MySave';
+import 'antd/dist/antd.less';
 
 GGEditor.setTrackable(false);
 export default ({ data, handleNodeClick, handleSave }) => (

@@ -2,9 +2,11 @@ import * as React from 'react';
 import { Widget, WidgetProps } from "@flintdev/widget-builder";
 import KoniEditorDev from './src';
 import * as _ from 'lodash'
+import { dataTreeHandler } from './src/dataTreeHandler';
 
 interface Params {
-  data: any,
+  data?: any,
+  dataTree?: any,
   customNodes?: any[],
   hideMimiMap?: string,
   hidePanel?: string
@@ -39,21 +41,18 @@ export default class Demo extends Widget<Props> {
 
   renderCustomComponent() {
     const { params } = this.props;
-    const { data, customNodes, hideMimiMap, hidePanel } = params;
+    const { data, dataTree, customNodes, hideMimiMap, hidePanel } = params;
+
     return (
-      <>
-        {!!data && (
-          <KoniEditorDev
-            data={data}
-            customNodes={customNodes}
-            hideMimiMap={hideMimiMap === "hide"}
-            hidePanel={hidePanel === "hide"}
-            handleNodeClick={this.handleNodeClick}
-            handleNodeDoubleClick={this.handleNodeDoubleClick}
-            handleSave={this.handleSave}
-          />
-        )}
-      </>
+      <KoniEditorDev
+        data={data ? data : (dataTree ? dataTreeHandler(dataTree) : {})}
+        customNodes={customNodes}
+        hideMimiMap={hideMimiMap === "hide"}
+        hidePanel={hidePanel === "hide"}
+        handleNodeClick={this.handleNodeClick}
+        handleNodeDoubleClick={this.handleNodeDoubleClick}
+        handleSave={this.handleSave}
+      />
     )
   }
 };

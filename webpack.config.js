@@ -51,47 +51,28 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
         test: /\.(txt|yaml)$/,
         use: 'raw-loader'
       },
       {
-        test: /\.(css|less)$/,
+        test: /\.less$/,
         include: /node_modules/,
-        use: [{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader',
-        }, {
-          loader: 'less-loader',
-          options: { lessOptions: { javascriptEnabled: true, sourceMap: true } },
-        }],
-      },
-      {
-        test: /\.(css|less)$/,
-        exclude: /node_modules/,
-        use: [{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader',
-          options: {
-            modules: {
-              localIdentName: "[name]__[local]___[hash:base64:5]",
-            },
-            importLoaders: 2,
-            sourceMap: true
-          }
-        },
-        {
-          loader: 'less-loader',
-          options: { lessOptions: { javascriptEnabled: true, sourceMap: true } },
-        },
+        exclude: /\.modules\.less$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'less-loader', options: { lessOptions: { javascriptEnabled: true, sourceMap: true }}}
         ],
-
-      }
+    },
+    {
+        test: /\.modules\.less$/,
+        exclude: /node_modules/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader', options: { modules: { localIdentName: "[name]__[local]___[hash:base64:5]"}}},
+          { loader: 'less-loader', options: { lessOptions: { javascriptEnabled: true, sourceMap: true }}}
+        ],
+    },
     ],
   },
   plugins: [

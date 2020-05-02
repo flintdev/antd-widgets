@@ -2,7 +2,7 @@ import { Item, ItemPanel } from 'gg-editor';
 
 import { Card } from 'antd';
 import React from 'react';
-import styles from './index.less';
+import styles from './index.modules.less';
 
 const FlowItemPanel = () => (
   <ItemPanel className={styles.itemPanel}>

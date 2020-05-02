@@ -3,7 +3,7 @@ import { CanvasPanel, DetailPanel, EdgePanel, GroupPanel, MultiPanel, NodePanel 
 import { Card } from 'antd';
 import React from 'react';
 import DetailForm from './DetailForm';
-import styles from './index.less';
+import styles from './index.modules.less';
 
 const FlowDetailPanel = () => (
   <DetailPanel className={styles.detailPanel}>

@@ -1,6 +1,6 @@
 import { Command } from 'gg-editor';
 import React from 'react';
-import styles from './index.less';
+import styles from './index.modules.less';
 import ButtonMap from '../../ButtonMap';
 
 const upperFirst = (str: string) =>

@@ -1,7 +1,14 @@
 import React from 'react';
-import { RegisterNode } from 'gg-editor';
+import { RegisterNode, withPropsAPI } from 'gg-editor';
 
-class MyKoniCustomNode extends React.Component {
+class MyKoniCustomNode extends React.Component<any> {
+  componentDidMount() {
+    const { propsAPI } = this.props;
+    setTimeout(() => {
+      propsAPI.executeCommand("autoZoom")
+    }, 0)
+  }
+
   render() {
     const config = {
       //@ts-ignore
@@ -43,4 +50,5 @@ class MyKoniCustomNode extends React.Component {
   }
 }
 
-export default MyKoniCustomNode;
+export default withPropsAPI(MyKoniCustomNode);
+
