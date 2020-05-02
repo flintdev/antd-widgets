@@ -2,8 +2,8 @@
 
 import * as React from 'react';
 import { treeData } from "./data/treeNodes";
-import { KoniEditor, MindEditor, Tree } from "../src";
-import { flowData, customNodes } from "./data/flowData";
+import { KoniEditor } from "../src";
+import { flowData, customNodes, dataTree } from "./data/flowData";
 import { mindData } from "./data/mindData";
 import { Tabs, Row, Switch } from 'antd';
 
@@ -30,21 +30,21 @@ class ExampleContainer extends React.Component<Props, State> {
     render() {
         const { hideMimiMapSwitch, hidePanelSwitch } = this.state;
         return (
-            <Tabs defaultActiveKey="1" tabPosition={'left'}>
-                {["tree", "koni", "mind"].map((tab, i) => (
+            <Tabs defaultActiveKey="0" tabPosition={'left'}>
+                {["koni", "tree", "mind"].map((tab, i) => (
                     <TabPane tab={tab} key={i.toString()}>
-                        {tab === "tree" &&
+                        {/* {tab === "tree" &&
                             <Tree params={{
                                 data: treeData,
                                 handleOnCheck: (selectedKeys: any, info: any) => console.log(">>> handleOnCheck", selectedKeys, info),
                                 handleOnSelect: (selectedKeys: any, info: any) => console.log(">>> handleOnSelect", selectedKeys, info),
                                 checkable: true
                             }} />
-                        }
+                        } */}
                         {tab === "koni" && <>
                             <KoniEditor
                                 params={{
-                                    data: flowData,
+                                    dataTree: dataTree,
                                     customNodes: customNodes,
                                     hideMimiMap: hideMimiMapSwitch ? "hide" : "show",
                                     hidePanel: hidePanelSwitch ? "hide" : "show",
@@ -57,7 +57,7 @@ class ExampleContainer extends React.Component<Props, State> {
                             />
                         </>
                         }
-                        {tab === "mind" && <>
+                        {/* {tab === "mind" && <>
                             <MindEditor
                                 params={{
                                     data: mindData
@@ -68,7 +68,7 @@ class ExampleContainer extends React.Component<Props, State> {
                                 }}
                             />
                         </>
-                        }
+                        } */}
                     </TabPane>
                 ))}
             </Tabs>
