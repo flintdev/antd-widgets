@@ -78,12 +78,13 @@ export default class App extends React.Component<any> {
       <GGEditor className={styles.editor}>
         <Row className={styles.editorHd}>
           <Col span={20}>
-            <KoniToolbar hidePanel={hidePanel} />
+            <KoniToolbar hidePanel={hidePanel}>
+              <MyLayout customNodes={customNodes}/>
+            </KoniToolbar>
           </Col>
           {!hidePanel && (
             <Col span={4}>
               <MySave handleSave={handleSave} />
-              <MyLayout customNodes={customNodes}/>
             </Col>
           )}
         </Row>

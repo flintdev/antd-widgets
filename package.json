@@ -1,6 +1,6 @@
 {
   "name": "@flintdev/antd-widgets",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "flint widgets of ant design components",
   "main": "dist/index.js",
   "scripts": {
