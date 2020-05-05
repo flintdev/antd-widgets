@@ -69,6 +69,11 @@ export default class App extends React.Component<any> {
 
   render() {
     const { data, customNodes, hidePanel, hideMimiMap, handleNodeClick, handleNodeDoubleClick, handeGroupClick, handleSave } = this.props;
+    const getMoreWidth = (base) => {
+      if (hideMimiMap && hidePanel) return base + 6 + 2
+      else if (hidePanel) return base + 2
+      return base
+    }
     return (
       <GGEditor className={styles.editor}>
         <Row className={styles.editorHd}>
@@ -88,7 +93,7 @@ export default class App extends React.Component<any> {
               <KoniItemPanel customNodes={customNodes} />
             </Col>
           )}
-          <Col span={16} className={styles.editorContent}>
+          <Col span={getMoreWidth(16)} className={styles.editorContent}>
             <Koni className={styles.koni}
               data={data}
               {...(hidePanel ? { orbit: { satellite: [] } } : {})}
@@ -100,10 +105,13 @@ export default class App extends React.Component<any> {
               onAfterChange={this.handleAfterChange}
             />
           </Col>
-          <Col span={6} className={styles.editorSidebar}>
-            {!hideMimiMap && <EditorMinimap />}
-            {!hidePanel && <KoniDetailPanel />}
-          </Col>
+          {
+            (!hideMimiMap || !hidePanel) && 
+            <Col span={6} className={styles.editorSidebar}>
+              {!hideMimiMap && <EditorMinimap />}
+              {!hidePanel && <KoniDetailPanel />}
+            </Col>
+          }
         </Row>
         {!hidePanel && <KoniContextMenu />}
         <MyKoniCustomNode />
