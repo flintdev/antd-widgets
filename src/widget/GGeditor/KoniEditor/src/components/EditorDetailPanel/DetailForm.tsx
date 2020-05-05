@@ -84,11 +84,11 @@ class DetailForm extends React.Component<DetailFormProps> {
   };
 
   renderGroupDetail = () => {
-    const { label = '新建分组' } = this.item.getModel();
+    const { label = 'new_group' } = this.item.getModel();
 
     return (
       <Form initialValues={{ label }}>
-        <Item label="Label" name="label" {...inlineFormItemLayout}>
+        <Item label="Group" name="label" {...inlineFormItemLayout}>
           <Input onBlur={this.handleInputBlur('label')} />
         </Item>
       </Form>

@@ -85,7 +85,8 @@ export const customNodes = [
     {
       name: "CRD",
       color: "rgb(92,191,142)",
-      icon: "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>"
+      icon: "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>",
+      next: ""
     },
     {
       name: "POD",
@@ -93,7 +94,8 @@ export const customNodes = [
     },
     {
       name: "NS",
-      icon: "<path fill='none' stroke='white' stroke-dasharray='.8 .4' stroke-dashoffset='3.44' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='.4' d='M5.18 5.2h7.67v6.69H5.18z'/>"
+      icon: "<path fill='none' stroke='white' stroke-dasharray='.8 .4' stroke-dashoffset='3.44' stroke-linejoin='round' stroke-miterlimit='10' stroke-width='.4' d='M5.18 5.2h7.67v6.69H5.18z'/>",
+      next: "POD SVC"
     },
     {
       name: "SVC",
@@ -113,66 +115,98 @@ export const customNodes = [
 export const dataTree = [
   {
     "id": "1",
-    "name": "node 1",
-    "label": "Lable",
-    "color": "blue",
-    "icon": "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>",
+    "name": "DEPLOY",
+    "label": "testing deployment",
+    "color": "orange",
+    "type": "node",
+    "shape": "hex-object",
     "children": [
       {
         "id": "1-1",
-        "name": "node 1-1",
-        "icon": "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>",
+        "name": "NS",
+        "type": "node",
+        "shape": "hex-object",
         "children": [
           {
             "id": "1-1-1",
-            "name": "node 1-1-1",
-            "icon": "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>"
+            "name": "POD",
+            "type": "node",
+            "shape": "hex-object",
+            "parent": "group-2"
           },
           {
             "id": "1-1-2",
-            "name": "node 1-1-2",
-            "icon": "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>"
+            "name": "POD",
+            "type": "node",
+            "shape": "hex-object",
+            "parent": "group-1"
           }
         ]
       },
       {
         "id": "1-2",
-        "name": "node 1-2",
-        "icon": "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>"
+        "name": "NS",
+        "type": "node",
+        "shape": "hex-object",
+        "children": [
+          {
+            "id": "1-2-1",
+            "name": "POD",
+            "type": "node",
+            "shape": "hex-object"
+          },
+          {
+            "id": "1-2-2",
+            "name": "POD",
+            "type": "node",
+            "shape": "hex-object",
+            "parent": "group-3"
+          }
+        ]
       }
     ]
   },
   {
     "id": "2",
-    "name": "node 2",
-    "icon": "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>",
+    "name": "DEPLOY",
+    "type": "node",
+    "shape": "hex-object",
     "children": [
       {
-        "id": "2-1",
-        "name": "node 2-1",
-        "icon": "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>"
-      },
-      {
-        "id": "2-2",
-        "name": "node 2-2",
-        "icon": "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>"
-      },
-      {
         "id": "2-3",
-        "name": "node 2-2",
-        "icon": "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>",
+        "name": "NS",
+        "type": "node",
+        "shape": "hex-object",
         "children": [
           {
             "id": "2-2-1",
-            "name": "node 1-1-1",
-            "icon": "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>"
+            "name": "POD",
+            "type": "node",
+            "shape": "hex-object",
+            "parent": "group-2"
           },
           {
             "id": "2-2-2",
-            "name": "node 1-1-2",
-            "icon": "<path fill='white' d='M13.28 7.6h-.7V5.76c0-.51-.41-.93-.92-.93H9.81v-.7a1.16 1.16 0 00-2.3 0v.7H5.65c-.51 0-.92.42-.92.93V7.5h.69a1.25 1.25 0 010 2.5h-.7v1.75c0 .5.42.92.93.92H7.4V12a1.25 1.25 0 012.5 0v.7h1.75c.5 0 .92-.42.92-.93V9.91h.7a1.16 1.16 0 000-2.3z'/>"
+            "name": "POD",
+            "type": "node",
+            "shape": "hex-object",
+            "parent": "group-1"
           }
         ]
+      },
+      {
+        "id": "2-1",
+        "name": "NS",
+        "type": "node",
+        "shape": "hex-object",
+        "parent": "group-4"
+      },
+      {
+        "id": "2-2",
+        "name": "NS",
+        "type": "node",
+        "shape": "hex-object",
+        "parent": "group-4"
       }
     ]
   }

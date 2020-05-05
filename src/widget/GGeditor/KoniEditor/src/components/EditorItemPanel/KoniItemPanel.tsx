@@ -19,6 +19,7 @@ const KoniItemPanel = ({ customNodes }) => (
             size="70"
             shape="hex-object"
             model={{
+              name: item.name,
               label: item.label,
               icon: svg
             }}

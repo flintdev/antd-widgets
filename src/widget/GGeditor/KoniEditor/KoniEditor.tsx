@@ -13,6 +13,7 @@ interface Params {
 }
 
 interface Events {
+  onGroupSelect?: (args: object) => void,
   onNodeSelect?: (args: object) => void,
   onNodeDoubleClick?: (args: object) => void,
   onSave?: (args: object) => void
@@ -28,6 +29,11 @@ export default class Demo extends Widget<Props> {
     const { events } = this.props;
     if (!!events?.onNodeSelect) events.onNodeSelect(_.get(data, ["item", "model"], {}));
   };
+  
+  handeGroupClick = (data: any) => {
+    const { events } = this.props;
+    if (!!events?.onGroupSelect) events.onGroupSelect(_.get(data, ["item", "model"], {}));
+  };
 
   handleNodeDoubleClick = (data: any) => {
     const { events } = this.props;
@@ -42,14 +48,14 @@ export default class Demo extends Widget<Props> {
   renderCustomComponent() {
     const { params } = this.props;
     const { data, dataTree, customNodes, hideMimiMap, hidePanel } = params;
-
     return (
       <KoniEditorDev
-        data={data ? data : (dataTree ? dataTreeHandler(dataTree) : {})}
+        data={data ? data : (dataTree ? dataTreeHandler(dataTree, customNodes) : {})}
         customNodes={customNodes}
         hideMimiMap={hideMimiMap === "hide"}
         hidePanel={hidePanel === "hide"}
         handleNodeClick={this.handleNodeClick}
+        handeGroupClick={this.handeGroupClick}
         handleNodeDoubleClick={this.handleNodeDoubleClick}
         handleSave={this.handleSave}
       />

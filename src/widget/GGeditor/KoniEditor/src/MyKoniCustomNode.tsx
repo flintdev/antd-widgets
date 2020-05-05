@@ -16,11 +16,12 @@ class MyKoniCustomNode extends React.Component<any> {
         item.model.size = "70";
         //@ts-ignore
         const keyShape = this.drawKeyShape(item);
-
+        
         // draw image
         const group = item.getGraphicGroup();
         const model = item.getModel();
         
+        item.name = model.name;
         group.addShape('text', {
             attrs: {
             x: 0,

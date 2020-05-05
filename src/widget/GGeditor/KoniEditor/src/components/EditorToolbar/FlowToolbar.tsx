@@ -25,7 +25,7 @@ const FlowToolbar = ({ hidePanel }: any) => (
       <ToolbarButton command="toFront" icon="to-front" text="To Front" />
       <Divider type="vertical" />
       <ToolbarButton command="multiSelect" icon="multi-select" text="Multi Select" />
-      <ToolbarButton command="addGroup" icon="group" text="Add Group" />
+      <ToolbarButton command="addGroup" icon="group" text="Add Group"/>
       <ToolbarButton command="unGroup" icon="ungroup" text="Ungroup" />
     </>)}
   </Toolbar>

@@ -1,5 +1,3 @@
-import React from "react"
-import { Button } from "antd"
 import {
     FileOutlined,
     UndoOutlined,
@@ -16,8 +14,10 @@ import {
     SelectOutlined,
     GroupOutlined,
     UngroupOutlined,
-    SaveOutlined
+    SaveOutlined,
+    LayoutOutlined
 } from "@ant-design/icons"
+import React from "react"
 
 const map = {
         "undo": <UndoOutlined/>,
@@ -34,21 +34,10 @@ const map = {
         "multi-select": <SelectOutlined/>,
         "group": <GroupOutlined/>,
         "ungroup": <UngroupOutlined/>,
-        "save": <SaveOutlined />
+        "save": <SaveOutlined />,
+        "layout": <LayoutOutlined />
 }
 
-export default class ButtonMap extends React.Component<any> {
-    constructor(props) {
-        super(props)
-    }
-    render() {
-        const { icon, handleClick } = this.props;
-        return (
-            <Button
-                icon={map[icon] || <FileOutlined />}
-                type="link"
-                onClick={!!handleClick ? handleClick : null}
-            />
-        )
-    }
+export default function getIcon (icon){
+    return map[icon] || <FileOutlined />
 }

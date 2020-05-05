@@ -51,6 +51,7 @@ class ExampleContainer extends React.Component<Props, State> {
                                 }}
                                 events={{
                                     onNodeSelect: (data) => console.log('>>> TopoEditor.onNodeSelect', data),
+                                    onGroupSelect: (data) => console.log('>>> TopoEditor.onGroupSelect', data),
                                     onNodeDoubleClick: (data) => console.log('>>> TopoEditor.onNodeDoubleClick', data),
                                     onSave: (data) => console.log('>>> TopoEditor.onSave', data),
                                 }}

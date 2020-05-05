@@ -1,16 +1,24 @@
 import React from "react";
 import { withPropsAPI } from "gg-editor";
-import ButtonMap from "./ButtonMap";
-  
+import { graphHandler } from "./dataTreeHandler";
+import { Button, Tooltip } from "antd";
+import getIcon from "./ButtonMap";
+
 class Save extends React.Component<any> {
   handleClick = () => {
     const { propsAPI, handleSave } = this.props;
-    handleSave(propsAPI.save())
+    const data = propsAPI.save();
+    handleSave({grpah: data, tree: graphHandler(data)})
   };
 
   render() {
     return (
-        <ButtonMap icon={"save"} handleClick={this.handleClick}/>
+      <Tooltip
+        title={"Save"}
+        placement="bottom"
+      > 
+        <Button type="link" icon={getIcon("save")} onClick={this.handleClick}/>
+      </Tooltip>
     );
   }
 }

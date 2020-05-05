@@ -1,8 +1,9 @@
 import { Command } from 'gg-editor';
 import React from 'react';
-import { Tooltip } from 'antd';
+import { Tooltip, Button } from 'antd';
 import styles from './index.modules.less';
 import ButtonMap from '../../ButtonMap';
+import getIcon from '../../ButtonMap';
 
 const upperFirst = (str: string) =>
   str.toLowerCase().replace(/( |^)[a-z]/g, (l: string) => l.toUpperCase());
@@ -22,7 +23,7 @@ const ToolbarButton: React.FC<ToolbarButtonProps> = (props) => {
         placement="bottom"
         overlayClassName={styles.tooltip}
       > 
-        <ButtonMap icon={icon || command}/>
+        <Button type="link" icon={getIcon(icon || command)}/>
       </Tooltip>
     </Command>
   );
