@@ -9,7 +9,7 @@
 */
 export const dataTreeHandler = (dataTree, customNodes: any[] | undefined) => {
     const getHeight = (nodes) => {
-        if (nodes) {
+        if (nodes && nodes.length > 0) {
             const heights = nodes.map(node => getHeight(node.children));
             return 1 + Math.max(...heights);
         } else {

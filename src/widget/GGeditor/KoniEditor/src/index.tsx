@@ -45,13 +45,18 @@ export default class App extends React.Component<any> {
         openNotificationWithIcon('success', 'Create new group', groupName)
       } else if (item.type === "edge") {
         // ensure tree structure, node has only one parent
-        const nodeHasParent = new Set(graph.getEdges().filter(e => e.id !== item.id).map(e => e.target.id))
-
+        const nodeHasParent = new Set(graph.getEdges().filter(e => e.id !== item.id).map(e => e.target.id));
+        
         // enforce next node from customNode
         const source = item.source.model.name;
         const target = item.target.model.name;
+
+        // ensure no direct to each other
+        // TODO: ensure no cycle
+        const nodeHasChildren = new Set(graph.getEdges().filter(e => e.id !== item.id && (e.source.id === item.target.model.id && e.target.id === item.source.model.id)));
+
         const next = customNodes?.find(customNode => customNode.name === source)?.next || "";
-        if (nodeHasParent.has(item.target.model.id)) {
+        if (nodeHasParent.has(item.target.model.id) || nodeHasChildren.size > 0) {
           graph.remove(item);
           openNotificationWithIcon('warning', 'Failed to create edge', 'This edge break the tree structure, each node has at most one parent.')
         } else if (next.length > 0 && next.indexOf(target) === -1) {
